@@ -1,9 +1,6 @@
-
 import "./styles.css"
  function Footer() {
   return (
-
-    
 
  <footer className="footer">
   
@@ -20,7 +17,7 @@ import "./styles.css"
     <span className="right">
 
       <a href="https://github.com/lgtf5" target="_blank">Lidia 🎞️</a>
-      <a href="https://github.com/joseRD149" target="_blank">Jose 🎟️️</a>
+      <a href="https://github.com/joseRD149" target="_blank">Lidia 🎞️️</a>
       <a href="https://github.com/emagmunioz" target="_blank">Eva 🎞️</a>
       <a href="https://github.com/celiagarridoherrera" target="_blank">Celia 🧨</a>
       <a href="https://github.com/AlejandroAriasSL" target="_blank">Alejandro 🎬</a>

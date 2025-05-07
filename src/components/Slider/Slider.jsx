@@ -6,6 +6,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import { useMovies } from "../../hooks/useMovies";
 
 const Slider = (props) => {
+    
     const containerRef = useRef(null);
     const results = useMovies(props.page);
     const [currentIndex, setCurrentIndex] = useState(0);
