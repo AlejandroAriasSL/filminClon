@@ -1,25 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/NavBar/Navbar";
-import FilmsPage from "./components/Films/Filmspage";
-import SeriesPage from "./components/Series/Seriespage";
-import Footer from "./components/Footer/Footer";
-import './components/stylespage.css';
-import "./App.css"
-import { HomePage } from "./components/HomePage/HomePage";
+import "./components/stylespage.css";
+import "./App.css";
+import { AppRouter } from "./routing/AppRouter";
 
 function App() {
-  return (
-    <Router basename="/filminClon">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/films" element={<FilmsPage />} />
-        <Route path="/series" element={<SeriesPage />} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
-};
+  return <AppRouter />;
+}
 
 export default App;
-

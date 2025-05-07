@@ -1,12 +1,11 @@
 import { useRef } from "react";
 import { Box, IconButton, Card, CardContent, Typography } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
-import {useMovies} from "../../hooks/useMovies"
 
 export const CategoryCarousel = ( props ) => {
   const containerRef = useRef(null);
-  
-  const results = useMovies(props.page)
+
+  const { movies, genre } = props;
 
   const scroll = (direction) => {
     const { current } = containerRef;
@@ -31,7 +30,7 @@ export const CategoryCarousel = ( props ) => {
           fontSize: "24px",
         }}
       >
-        titulo
+        {genre}
         </Typography>
       <IconButton
         onClick={() => scroll("left")}
@@ -68,7 +67,7 @@ export const CategoryCarousel = ( props ) => {
           scrollbarWidth: "none", 
         }}
       >
-        {results.map((item, index) => (
+        {movies.map((item, index) => (
           <Card key={index} 
           sx={{ 
             minWidth: 200,
