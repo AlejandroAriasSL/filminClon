@@ -1,6 +1,8 @@
 #root {
-  
   min-width: 50vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   padding: 4.5rem;
   padding-bottom: 2rem;

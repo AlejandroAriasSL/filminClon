@@ -1,19 +1,17 @@
-export async function fetchData(page) 
-{
-    const language = "es-ES"
-    const account_id = import.meta.env.VITE_API_KEY;
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${account_id}&language=${language}&page=${page}`
-    
-    try 
-    {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`Error de red: ${response.status}`);
-        return await response.json();
-        
-    } catch (error)
-    {
-        console.error(`Error al obtener los datos: ${error}`);
-        throw error
-    }
+import { account_id, language } from "./utils/config";
 
+export const getGenres = async () => {
+    return fetch(`https://api.themoviedb.org/3/genre/movie/list?language=${language}&api_key=${account_id}`)
+        .then((res) => res.json())
+        .catch((err) => console.error(err))
+} 
+
+export const getMoviesByGenre = async (genreId) => {
+    return fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${genreId}&language=${language}&api_key=${account_id}`)
+        .then((res) => res.json())
+        .then((data) => ({
+            genreId,
+            movies: data.results
+        }))
+        .catch((err) => console.error(`Error al obtener el género ${genreId}: ${err}`))
 }
